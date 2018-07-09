@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
-  "jsnext:main": "index.js"
+  "jsnext:main": "index.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "devDependencies": {
+    "serve": "^9.2.0"
+  }
 }

@@ -1,0 +1,36 @@
+<html lang="zh-CN">
+<head>
+    <title>预下单</title>
+    <meta charset="UTF-8">
+    <meta name="intent_match" content="GREET">
+    <link rel="import" href="../components/my-element.html"/>
+    <script type="module" src="../components/my-button.js"></script>
+</head>
+<body>
+<template id="end-activity-tpl">
+    <screen>
+        <view>
+            <my-element/>
+            <my-button/>
+            <body1>Bye!</body1>
+            <button>Complete</button>
+        </view>
+    </screen>
+</template>
+<script type="module">
+  customElements.define('end-activity', class extends HTMLElement {
+    constructor () {
+      super();
+      this.attachShadow({mode: 'open'});
+      const template = document.getElementById('end-activity-tpl');
+      this.appendChild(template.content.cloneNode(true));
+      this.querySelector('button').addEventListener('click', this.handlerClick.bind(this), false);
+    }
+
+    handlerClick () {
+      this.context.commit();
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<template id="my-element">
+<template id="my-element-tpl">
     <style>
         :host {
             display: block;
@@ -17,18 +17,11 @@
     </div>
 </template>
 <script type="module">
-    @Component('my-element')
-    class MyElement {
-
-        @PostConstructor
-        init() {
-
-        }
-
-        static get properties() {
-            return []
-        }
+  customElements.define('my-element', class extends HTMLElement {
+    constructor () {
+      super();
+      this.attachShadow({mode: 'open'});
+      this.appendChild(document.getElementById('my-element-tpl').content.cloneNode(true));
     }
-
-    export default MyElement;
+  });
 </script>

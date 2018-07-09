@@ -5,7 +5,11 @@
     <title>默认支付</title>
     <meta name="appId" content="">
     <meta name="description" content="核心支付程序">
-    <link rel="import" href="pages/fill_amount.html">
-    <link rel="import" href="pages/order.html">
+    <script type="module" src="pages/start-activity.js"></script>
+    <link rel="import" href="pages/end-activity.html">
 </head>
+<body>
+<start-activity stage="SHOW" intent="GREET"/>
+<end-activity stage="POST_PAY" intent="GREET"/>
+</body>
 </html>

@@ -1,3 +1,3 @@
-export class OrderService {
-
+export function preCreate () {
+  alert('precreate order!');
 }
