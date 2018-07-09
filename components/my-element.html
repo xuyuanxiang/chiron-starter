@@ -1,0 +1,34 @@
+<template id="my-element">
+    <style>
+        :host {
+            display: block;
+        }
+
+        :host(negative) {
+
+        }
+
+        :host(positive) {
+
+        }
+    </style>
+    <div>
+        <slot></slot>
+    </div>
+</template>
+<script type="module">
+    @Component('my-element')
+    class MyElement {
+
+        @PostConstructor
+        init() {
+
+        }
+
+        static get properties() {
+            return []
+        }
+    }
+
+    export default MyElement;
+</script>

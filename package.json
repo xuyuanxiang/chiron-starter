@@ -1,0 +1,7 @@
+{
+  "name": "chiron-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "jsnext:main": "index.js"
+}

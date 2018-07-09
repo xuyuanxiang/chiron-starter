@@ -1,0 +1,55 @@
+<html lang="zh-CN">
+<head>
+    <title>去付款</title>
+    <meta name="intent_match" content="*">
+</head>
+<body>
+<template id="fill-amount">
+    <screen>
+        <view>
+
+        </view>
+        <button id="submitBtn" class="calm" onclick="handleSubmit"></button>
+    </screen>
+</template>
+<script type="module">
+    function Controller (selector) {
+        return class extends HTMLElement {
+            constructor () {
+                super();
+                this.attachShadow({mode: 'open'});
+                const tpl = document.querySelector(selector);
+                this.appendChild(tpl.content.cloneNode(true));
+            }
+        };
+    }
+
+    function Prop (type) {
+
+    }
+
+    function Bind (event, target) {
+
+    }
+
+    function Observer () {
+
+    }
+
+    @Controller('#fill-amount')
+    class FillAmount {
+        @Prop(String) id;
+        @Prop(Number) value;
+
+        @Observer data = {};
+
+        @Bind(event = 'click', target = '#submitBtn')
+        handleSubmit () {
+
+        }
+    }
+
+    export default FillAmount;
+</script>
+</body>
+</html>
