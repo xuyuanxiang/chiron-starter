@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@webcomponents/webcomponentsjs@^2.0.2":
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/@webcomponents/webcomponentsjs/download/@webcomponents/webcomponentsjs-2.0.2.tgz#35272bcedfab0cba6778707e76f0191d12deb9f6"
+
 "@zeit/schemas@1.6.0":
   version "1.6.0"
   resolved "http://registry.npm.taobao.org/@zeit/schemas/download/@zeit/schemas-1.6.0.tgz#2f49cb7b3fff308bd35d6a934c5e0a143d598e17"

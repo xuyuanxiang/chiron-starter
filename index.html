@@ -5,11 +5,39 @@
     <title>默认支付</title>
     <meta name="appId" content="">
     <meta name="description" content="核心支付程序">
-    <script type="module" src="pages/start-activity.js"></script>
-    <link rel="import" href="pages/end-activity.html">
+    <!--<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-bundle.js"></script>-->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js" defer></script>
+    <!--<script type="module" src="pages/start-activity.js"></script>-->
+    <!--<script type="module">-->
+    <!--window.addEventListener('WebComponentsReady', function () {-->
+    <!--import('./pages/start-activity.js');-->
+    <!--}, false);-->
+    <!--</script>-->
 </head>
-<body>
-<start-activity stage="SHOW" intent="GREET"/>
-<end-activity stage="POST_PAY" intent="GREET"/>
+<body style="display: none;opacity: 0;visibility: hidden">
+<template id="my-button">
+    <slot>button</slot>
+</template>
+<ws-btn>
+    <span slot>Click Me</span>
+</ws-btn>
+<script>
+  window.addEventListener('WebComponentsReady', () => {
+    customElements.define('ws-btn', class extends HTMLElement {
+      constructor () {
+        super();
+        const template = document.getElementById('my-button');
+        this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true));
+
+        // this.appendChild(template.content);
+        // console.log('my-button:', template.content);
+
+      }
+    }, {extends: 'button'});
+    document.body.style.opacity = '1';
+    document.body.style.display = 'block';
+    document.body.style.visibility = 'visible';
+  }, false);
+</script>
 </body>
 </html>

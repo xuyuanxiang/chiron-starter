@@ -9,5 +9,8 @@
   },
   "devDependencies": {
     "serve": "^9.2.0"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.0.2"
   }
 }
